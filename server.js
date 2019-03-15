@@ -4,13 +4,13 @@ const express = require('express');
 
 // Constants
 const PORT = 3014;
-const HOST = '172.17.39.0';
+const HOST = 'localhost';
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
-  res.send(util.inspect(req));
+  let str=util.inspect(req)
+  res.status(500).jsonp({ now: (new Date()).toTimeString(),req: str });
 });
 
 app.listen(PORT, HOST);
