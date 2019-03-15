@@ -10,6 +10,7 @@ const HOST = '172.17.39.0';
 const app = express();
 app.get('/', (req, res) => {
   res.send('Hello world\n');
+  res.send((new Date()).toDateString());
 });
 
 app.listen(PORT, HOST);
